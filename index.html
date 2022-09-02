@@ -11,8 +11,8 @@
     <script src="https://kit.fontawesome.com/9b374be581.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <header class="container">
+<body class="bg-secondary bg-opacity-10">
+    <header class="container-fluid">
         <section>
             <!-- --------navbar -------  -->
             <nav class="navbar navbar-expand-lg bg-light">
@@ -41,12 +41,55 @@
             </div>
         </section>
         <!-- -----------news type dynamically added section ----------  -->
-        <section>
-            <div class="d-flex justify-content-around flex-lg-row flex-row flex-lg-nowrap flex-wrap" id="news-catagories-field">
-               
+        <section class="container">
+            <div class="d-flex justify-content-between flex-lg-row flex-md-row flex-column" id="news-catagories-field">
+
             </div>
         </section>
     </header>
+    <!-- -----------main section start here ---------------------- -->
+    <main class="container">
+        <!-- -------------sppiner------------ -->
+        <div class="d-flex justify-content-center my-5 d-none" id="spinner">
+            <div class="spinner-border text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <!-- ----------item count div ---------------  -->
+        <div id="count-field" class="mt-5">
+
+        </div>
+        <!-- -----------sort by view default field----------- -->
+        <section class="d-flex justify-content-between align-content-center d-none" id="sort-section">
+            <div class="my-2">
+                <p>Sort by view: <span class="text-secondary border border-secondary px-2 py-1">Default</span></p>
+            </div>
+            <div class="my-2">
+                <button type="button" class="btn btn-danger btn-sm">Today's Pick</button>
+                <button type="button" class="btn btn-dark btn-sm">Tranding</button>
+            </div>
+        </section>
+        <!-- -------------main article section start here ----------------- -->
+        <section class="my-4">
+            <div id="news-field">
+                <!-- <div class="card mb-3" >
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </main>
     <!-- script links  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
