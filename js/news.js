@@ -14,19 +14,19 @@ const displayNewsCatagories = catagories => {
         <button class = "btn btn-outline-dark mx-auto" onclick="catagoriesClick(${category.category_id},'${category.category_name}')"> ${category.category_name}</button>
         `
         parentField.appendChild(catagoriesField);
-      
+
     })
 
 }
 // --------------spinner--------------/
-const toggleSpinner = isLoading =>{
-   const spinnerField =  document.getElementById('spinner');
-   if(isLoading === true){
-    spinnerField.classList.remove('d-none')
-   }
-   else{
-    spinnerField.classList.add('d-none')
-   }
+const toggleSpinner = isLoading => {
+    const spinnerField = document.getElementById('spinner');
+    if (isLoading === true) {
+        spinnerField.classList.remove('d-none')
+    }
+    else {
+        spinnerField.classList.add('d-none')
+    }
 };
 
 
@@ -48,12 +48,31 @@ const displayNews = (articles, name) => {
     <h5 class="fw-normal border bg-white px-4 py-2 my-4">${articles.length} items found for category <span class="text-danger">${name}</span></h5>
     `
     sortField.classList.remove('d-none')
+    const newsParentDiv = document.getElementById('news-field');
+    newsParentDiv.innerHTML = '';
 
-    articles.forEach(article =>{
-        const newsParentDiv = document.getElementById('news-field');
-        newsParentDiv.innerHTML = '';
+    articles.forEach(article => {
+        console.log(article)
         const newsChildDiv = document.createElement('div');
-        newsChildDiv.classList.add
+        newsChildDiv.classList.add('card','mb-3','p-3')
+        newsChildDiv.innerHTML = `
+       
+        <div class="row g-3 align-items-center">
+            <div class="col-md-4">
+                <img src="${article.image_url}" class="img-fluid rounded-start rounded-end-0" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural
+                        lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    
+        `
+        newsParentDiv.appendChild(newsChildDiv);
     })
 }
 
