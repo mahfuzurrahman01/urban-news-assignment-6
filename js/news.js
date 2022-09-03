@@ -74,7 +74,7 @@ const displayNews = (articles, name) => {
             <div class="card-body">
                 <h5 class="card-title">${article.title}</h5>
                 <p class="card-text">${article.details.slice(0, 300)}...</p>
-                <div class="card-text d-flex justify-content-between text-secondary">
+                <div class="card-text d-flex flex-md-row flex-column justify-content-between text-secondary">
                     <div class='d-flex align-items-center gap-1'>
                         <img src='${article.author.img}' class='author-img border border-3 border-danger'>
                         <div>
@@ -129,9 +129,14 @@ const displayModal = info => {
     <img src ='${info.image_url}' class ='img-fluid border border-2 rounded'>
     <img src = '${info.author.img}' class ='modal-author-img border border-3 border-danger'>
    <div class='modal-article'>
-   <h6><span class='text-danger text-center'> ${info.author.name ? info.author.name : 'Author not found'}</span></h6>
-   <h6>Publish:<span class='text-danger'> ${info.author.published_date ? info.author.published_date : 'Publish date not found'}</span></h6>
-   <h6>Badge:<span class='text-danger'> ${info.rating.badge ? info.rating.badge : 'Badge not found'}</span></h6>
+   <h6>By-<span class='text-danger text-center'> ${info.author.name ? info.author.name : 'Author not found'}</span></h6>
+   <h6><span class='text-danger'> ${info.author.published_date ? info.author.published_date : 'Publish date not found'}</span></h6>
+   <h6><span class='text-danger'> ${info.rating.badge ? info.rating.badge : 'Badge not found'}</span></h6>
+   <p><span class='text-warning'> <i class="fa-sharp fa-solid fa-star"></i>
+   <i class="fa-sharp fa-solid fa-star"></i>
+   <i class="fa-sharp fa-solid fa-star"></i>
+   <i class="fa-sharp fa-solid fa-star"></i>
+   <i class="fa-solid fa-star-half-stroke"></i></span></p>
    <p>${info.details.slice(0, 300)}...</p>
    </div>
     
