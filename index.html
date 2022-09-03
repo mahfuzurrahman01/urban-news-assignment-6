@@ -15,6 +15,14 @@
             height: 40px;
             border-radius: 100%;
         }
+        .modal-author-img{
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+            position: absolute;
+            top: 40%;
+            left: 38%;
+        }
     </style>
 </head>
 
@@ -69,7 +77,13 @@
         <!-- -----------sort by view default field----------- -->
         <section class="d-flex justify-content-between align-content-between d-none" id="sort-section">
             <div class="my-2">
-                <p>Sort by view: <span class="text-secondary border border-secondary px-2 py-1">Default</span></p>
+                <label for="sort">Sort by view:</label>
+                <select id="sort" name="list" form="form">
+                    
+                    <option value="most view">Most Viewed</option>
+                    <option value="default">Default</option>
+                  
+                </select>
             </div>
             <div class="my-2">
                 <button type="button" class="btn btn-danger btn-sm">Today's Pick</button>
@@ -92,20 +106,21 @@
         <!-- ---------------modal ----------------  -->
         <section id="modal-field">
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <div class="modal fade text-start" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header border-0">
-                            <h5 class="modal-title" id="exampleModalLabel">News <span class="text-danger">Details</span></h5>
+                            <h5 class="modal-title" id="exampleModalLabel">News <span class="text-danger">Details</span>
+                            </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body" id="modal-body">
-                            
+                        <div class="modal-body p-4 position-relative text-center" id="modal-body">
+
                         </div>
                         <div class="modal-footer border-0">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                          
+
                         </div>
                     </div>
                 </div>
