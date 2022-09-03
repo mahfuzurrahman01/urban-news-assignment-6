@@ -66,7 +66,7 @@ const displayNews = (articles, name) => {
         const newsChildDiv = document.createElement('div');
         newsChildDiv.classList.add('card', 'mb-3', 'p-3')
         newsChildDiv.innerHTML = `
-        <div class="row g-0">
+        <div class="row g-0 align-items-center">
         <div class="col-md-4">
             <img src="${article.image_url}" class="img-fluid rounded-start" alt="...">
         </div>
@@ -90,7 +90,7 @@ const displayNews = (articles, name) => {
                         </div>
                     </div>
                    
-                    <div class='d-flex align-items-center'>
+                    <div class='d-flex align-items-center text-warning'>
                         <div>
                             <i class="fa-sharp fa-solid fa-star"></i>
                             <i class="fa-sharp fa-solid fa-star"></i>
@@ -111,6 +111,7 @@ const displayNews = (articles, name) => {
         newsParentDiv.appendChild(newsChildDiv);
     })
 }
+// detail button click funtion and open modal
 
 const detailsBtn = id => {
 
@@ -143,7 +144,7 @@ const displayModal = info => {
     `
 }
 
-catagoriesClick(08, 'All News')
+catagoriesClick(08, 'All News');
 
 
 
