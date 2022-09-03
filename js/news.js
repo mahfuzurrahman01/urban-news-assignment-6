@@ -144,3 +144,6 @@ const displayModal = info => {
 }
 
 catagoriesClick(08, 'All News')
+
+
+

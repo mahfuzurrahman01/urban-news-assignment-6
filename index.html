@@ -15,7 +15,8 @@
             height: 40px;
             border-radius: 100%;
         }
-        .modal-author-img{
+
+        .modal-author-img {
             width: 120px;
             height: 120px;
             border-radius: 100%;
@@ -39,13 +40,13 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                        <form class="d-flex" role="search">
-                            <button class="btn btn-outline-dark me-2" type="submit">News</button>
-                            <button class="btn btn-outline-danger me-2" type="submit">Blogs</button>
+                        <div class="d-flex" role="search">
+                            <button class="btn btn-outline-dark me-2" onclick="newsFunc()">News</button>
+                            <button class="btn btn-outline-danger me-2" onclick="blogFunc()">Blogs</button>
                             <button class="btn btn-outline-danger" type="submit"><i
                                     class="fa-solid fa-user"></i></button>
 
-                        </form>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -78,13 +79,13 @@
             <div class="my-2">
                 <label for="sort">Sort by view:</label>
                 <select id="sort" name="list" form="form">
-                    
+
                     <option value="most view">Most Viewed</option>
                     <option value="default">Default</option>
-                  
+
                 </select>
             </div>
-            <div class="my-2">
+            <div class="my-2 d-md-block d-none">
                 <button type="button" class="btn btn-danger btn-sm">Today's Pick</button>
                 <button type="button" class="btn btn-dark btn-sm">Tranding</button>
             </div>
@@ -132,6 +133,7 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <script src="js/news.js"></script>
+    <script src="js/utilities.js"></script>
 </body>
 
 </html>
