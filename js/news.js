@@ -8,10 +8,10 @@ fetch(url)
 const displayNewsCatagories = catagories => {
     const parentField = document.getElementById('news-catagories-field');
     catagories.forEach(category => {
-        // console.log(category)
+    
         const catagoriesField = document.createElement('div');
         catagoriesField.innerHTML = `
-        <button class = "btn btn-outline-dark mx-auto" onclick="catagoriesClick(${category.category_id},'${category.category_name}')"> ${category.category_name}</button>
+        <button class = "btn btn-outline-dark mx-auto" onclick="catagoriesClick('${category.category_id}','${category.category_name}')"> ${category.category_name}</button>
         `
         parentField.appendChild(catagoriesField);
 
@@ -34,7 +34,7 @@ const toggleSpinner = isLoading => {
 const catagoriesClick = (id, name) => {
 
     toggleSpinner(true)
-    const url = `https://openapi.programming-hero.com/api/news/category/0${id}`
+    const url = `https://openapi.programming-hero.com/api/news/category/${id}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayNews(data.data, name))
@@ -114,6 +114,7 @@ const displayNews = (articles, name) => {
 // detail button click funtion and open modal
 
 const detailsBtn = id => {
+    // console.log(id)
 
     const url = `https://openapi.programming-hero.com/api/news/${id}`;
     fetch(url)
@@ -130,7 +131,7 @@ const displayModal = info => {
     <img src ='${info.image_url}' class ='img-fluid border border-2 rounded'>
     <img src = '${info.author.img}' class ='modal-author-img border border-3 border-danger'>
    <div class='modal-article'>
-   <h6>By-<span class='text-danger text-center'> ${info.author.name ? info.author.name : 'Author not found'}</span></h6>
+   <h6>By-<span class='text-danger text-center'> ${info.author.name ? info.author.name : 'Authors not found'}</span></h6>
    <h6><span class='text-danger'> ${info.author.published_date ? info.author.published_date : 'Publish date not found'}</span></h6>
    <h6><span class='text-danger'> ${info.rating.badge ? info.rating.badge : 'Badge not found'}</span></h6>
    <p><span class='text-warning'> <i class="fa-sharp fa-solid fa-star"></i>
@@ -144,7 +145,7 @@ const displayModal = info => {
     `
 }
 
-catagoriesClick(08, 'All News');
+catagoriesClick('08', 'All News');
 
 
 
